@@ -11,11 +11,9 @@
 
                             <?php 
                             
-                           $base = "SELECT * FROM users WHERE id=1";
-                           $result = $database->query($base);
-
-                           print_r(mysqli_fetch_array($result));
-
+                               $found_user = User::find_user_by_id(1);
+                                echo $found_user->password;
+                        
                             ?>
 
                         <ol class="breadcrumb">
