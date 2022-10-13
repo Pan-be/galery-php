@@ -20,7 +20,24 @@ class User
         $the_result_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
         
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
+        
+    }
+    
+    public static function verify_user($username, $password)
+    {
+        global $database;
+        
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
 
+        $base = "SELECT * FROM users WHERE ";
+        $base .= "username = '{$username}' ";
+        $base .= "AND password = '{$password}' ";
+        $base .= "LIMIT 1";
+
+        $the_result_array = self::find_this_query($base);
+        
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
     public static function find_this_query($base)
