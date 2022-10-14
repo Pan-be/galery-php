@@ -21,6 +21,7 @@ if ($user_found) {
     $the_message = 'Your password or username are incorect.';
 } 
 } else {
+    $the_message = "";
     $username = "";
     $password = "";
 }
@@ -30,7 +31,7 @@ if ($user_found) {
 
 <div class="col-md-4 col-md-offset-3">
 
-<h4 class="bg-danger"></h4>
+<h4 class="bg-danger"><?php echo $the_message; ?></h4>
 	
 <form id="login-id" action="" method="post">
 	
