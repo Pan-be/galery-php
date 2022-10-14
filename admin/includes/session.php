@@ -13,7 +13,7 @@ class Session
 
     public function is_signed_in()
     {
-        $this->signed_in;
+       return $this->signed_in;
     }
 
     public function login($user)

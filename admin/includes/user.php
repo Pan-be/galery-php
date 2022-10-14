@@ -23,6 +23,21 @@ class User
         
     }
     
+    public static function find_this_query($base)
+    {
+        global $database;
+
+        $result_set = $database->query($base);
+
+        $the_object_array = array();
+
+        while($row = mysqli_fetch_array($result_set)) {
+            $the_object_array[] = self::instantation($row);
+        }
+
+        return $the_object_array;
+    }
+
     public static function verify_user($username, $password)
     {
         global $database;
@@ -38,21 +53,6 @@ class User
         $the_result_array = self::find_this_query($base);
         
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
-    }
-
-    public static function find_this_query($base)
-    {
-        global $database;
-
-        $result_set = $database->query($base);
-
-        $the_object_array = [];
-
-        while ($row = mysqli_fetch_array($result_set)) {
-            $the_object_array[] = self::instantation($row);
-        }
-
-        return $the_object_array;
     }
 
     public static function instantation($the_record)
