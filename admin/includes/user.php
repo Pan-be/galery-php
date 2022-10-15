@@ -80,4 +80,50 @@ class User
 
         return array_key_exists($key,$object_properties);
     }
+
+    public function create()
+    {
+        global $database;
+        $base = "INSERT INTO users (username, password, first_name, last_name) ";
+        $base .= "VALUES ('";
+        $base .= $database->escape_string($this->username) . "', '"; 
+        $base .= $database->escape_string($this->password) . "', '"; 
+        $base .= $database->escape_string($this->first_name) . "', '"; 
+        $base .= $database->escape_string($this->last_name) . "')"; 
+
+        if ($database->query($base)) {
+            $this->id = $database->insert_id();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function update()
+    {
+        global $database;
+
+        $base = "UPDATE users SET ";
+        $base .= "username= '" . $database->escape_string($this->username) . "', "; 
+        $base .= "password= '" . $database->escape_string($this->password) . "', "; 
+        $base .= "first_name= '" . $database->escape_string($this->first_name) . "', "; 
+        $base .= "last_name= '" . $database->escape_string($this->last_name) . "' ";
+        $base .= " WHERE id= " . $database->escape_string($this->id);
+
+        $database->query($base);
+
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+    }
+
+    public function delete()
+    {
+        global $database;
+
+        $base = "DELETE FROM users ";
+        $base .= "WHERE id= " . $database->escape_string($this->id);
+        $base .= "LIMIT 1";
+
+        $database->query($base);
+    }
 }

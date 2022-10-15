@@ -11,8 +11,15 @@
 
                             <?php 
                             
-                               $found_user = User::find_user_by_id(1);
-                                echo $found_user->password;
+                            // $ewelina = new User();
+                            // $ewelina->username = 'Konrad';
+                            // $ewelina->password = 'Ewelinka';
+                            // $ewelina->first_name = 'Konrad';
+                            // $ewelina->last_name = 'Bieniek';
+                            // $ewelina->create();
+
+                            $user = User::find_user_by_id(8);
+                            $user->delete();
                         
                             ?>
 
