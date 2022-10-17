@@ -26,8 +26,10 @@
                             // $photo->size = 16;
                             // $photo->create();
 
-                            // $user = User::find_user_by_id(9);
-                            // $user->delete();
+                            // $user = User::find_by_id(10);
+                            // echo $user->id;
+                            $user = Photo::find_by_id(1);
+                            echo $user->title;
 
                             // $user = User::find_user_by_id(3);
                             // $user->username = 'Teodor';
@@ -42,7 +44,7 @@
                             //     echo $photo->title;
                             // }
 
-                            echo INCLUDES_PATH;
+                            // echo INCLUDES_PATH;
 
                             ?>
 
