@@ -18,13 +18,13 @@
                             // $ewelina->last_name = 'FromHighschool';
                             // $ewelina->create();
 
-                            $photo = new Photo();
-                            $photo->title = 'Chad';
-                            $photo->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit esse, est, atque in optio ipsa quos voluptate tenetur quia perspiciatis doloribus magni animi! Eum porro rem vitae dolores accusamus.';
-                            $photo->filename = 'Chad.jpg';
-                            $photo->type = 'image';
-                            $photo->size = 16;
-                            $photo->create();
+                            // $photo = new Photo();
+                            // $photo->title = 'Chad';
+                            // $photo->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit esse, est, atque in optio ipsa quos voluptate tenetur quia perspiciatis doloribus magni animi! Eum porro rem vitae dolores accusamus.';
+                            // $photo->filename = 'Chad.jpg';
+                            // $photo->type = 'image';
+                            // $photo->size = 16;
+                            // $photo->create();
 
                             // $user = User::find_user_by_id(9);
                             // $user->delete();
@@ -41,6 +41,8 @@
                             // foreach ($photos as $photo) {
                             //     echo $photo->title;
                             // }
+
+                            echo INCLUDES_PATH;
 
                             ?>
 
