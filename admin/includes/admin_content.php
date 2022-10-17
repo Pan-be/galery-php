@@ -11,16 +11,20 @@
 
                             <?php 
                             
-                            // $ewelina = new User();
-                            // $ewelina->username = 'Konrad';
-                            // $ewelina->password = 'Ewelinka';
-                            // $ewelina->first_name = 'Konrad';
-                            // $ewelina->last_name = 'Bieniek';
-                            // $ewelina->create();
+                            $ewelina = new User();
+                            $ewelina->username = 'Borys';
+                            $ewelina->password = 'Ewelinka';
+                            $ewelina->first_name = 'Borys';
+                            $ewelina->last_name = 'Pies';
+                            $ewelina->create();
 
-                            $user = User::find_user_by_id(8);
-                            $user->delete();
-                        
+                            // $user = User::find_user_by_id(9);
+                            // $user->delete();
+
+                            // $user = User::find_user_by_id(3);
+                            // $user->username = 'Grzywacz';
+                            // $user->update();
+
                             ?>
 
                         <ol class="breadcrumb">

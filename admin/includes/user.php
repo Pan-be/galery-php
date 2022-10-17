@@ -3,6 +3,8 @@
 class User 
 {
 
+    private static $db_table = "users"; 
+    private static $db_table_fields = ['username', 'password', 'first_name', 'last_name']; 
     public $id;
     public $username;
     public $password;
@@ -58,11 +60,6 @@ class User
     public static function instantation($the_record)
     {
         $the_object = new self;
-        // $the_object->id = $found_user['id'];
-        // $the_object->username = $found_user['username'];
-        // $the_object->password = $found_user['password'];
-        // $the_object->first_name = $found_user['first_name'];
-        // $the_object->last_name = $found_user['last_name'];
 
         foreach ($the_record as $the_attribute => $value) {
             if ($the_object->has_the_attribute($the_attribute)) {
@@ -81,15 +78,30 @@ class User
         return array_key_exists($key,$object_properties);
     }
 
+    protected function properties()
+    {
+        $properties = array();
+
+        foreach (self::$db_table_fields as $db_field) {
+            if (property_exists($this, $db_field)) {
+                $properties[$db_field] = $this->$db_field;
+            }
+        }
+        return $properties;
+    }
+
+    public function save()
+    {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
     public function create()
     {
         global $database;
-        $base = "INSERT INTO users (username, password, first_name, last_name) ";
-        $base .= "VALUES ('";
-        $base .= $database->escape_string($this->username) . "', '"; 
-        $base .= $database->escape_string($this->password) . "', '"; 
-        $base .= $database->escape_string($this->first_name) . "', '"; 
-        $base .= $database->escape_string($this->last_name) . "')"; 
+        $properties = $this->properties();
+
+        $base = "INSERT INTO " . self::$db_table . "(" . implode(",", array_keys($properties)) . ")";
+        $base .= "VALUES ('". implode("','", array_values($properties)) ."')";
 
         if ($database->query($base)) {
             $this->id = $database->insert_id();
@@ -104,7 +116,7 @@ class User
     {
         global $database;
 
-        $base = "UPDATE users SET ";
+        $base = "UPDATE " . self::$db_table . " SET ";
         $base .= "username= '" . $database->escape_string($this->username) . "', "; 
         $base .= "password= '" . $database->escape_string($this->password) . "', "; 
         $base .= "first_name= '" . $database->escape_string($this->first_name) . "', "; 
@@ -120,9 +132,9 @@ class User
     {
         global $database;
 
-        $base = "DELETE FROM users ";
+        $base = "DELETE FROM  " . self::$db_table . " ";
         $base .= "WHERE id= " . $database->escape_string($this->id);
-        $base .= "LIMIT 1";
+        $base .= " LIMIT 1";
 
         $database->query($base);
     }
