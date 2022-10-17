@@ -12,11 +12,19 @@
                             <?php 
                             
                             // $ewelina = new User();
-                            // $ewelina->username = 'Bob';
+                            // $ewelina->username = 'Chad';
                             // $ewelina->password = '123';
-                            // $ewelina->first_name = 'Bob';
-                            // $ewelina->last_name = 'TheBuilder';
+                            // $ewelina->first_name = 'Chad';
+                            // $ewelina->last_name = 'FromHighschool';
                             // $ewelina->create();
+
+                            $photo = new Photo();
+                            $photo->title = 'Chad';
+                            $photo->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit esse, est, atque in optio ipsa quos voluptate tenetur quia perspiciatis doloribus magni animi! Eum porro rem vitae dolores accusamus.';
+                            $photo->filename = 'Chad.jpg';
+                            $photo->type = 'image';
+                            $photo->size = 16;
+                            $photo->create();
 
                             // $user = User::find_user_by_id(9);
                             // $user->delete();
@@ -25,10 +33,14 @@
                             // $user->username = 'Teodor';
                             // $user->update();
 
-                            $users = User::find_all();
-                            foreach ($users as $user) {
-                                echo $user->username;
-                            }
+                            // $users = User::find_all();
+                            // foreach ($users as $user) {
+                            //     echo $user->username;
+                            // }
+                            // $photos = Photo::find_all();
+                            // foreach ($photos as $photo) {
+                            //     echo $photo->title;
+                            // }
 
                             ?>
 
