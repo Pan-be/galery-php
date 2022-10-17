@@ -11,19 +11,24 @@
 
                             <?php 
                             
-                            $ewelina = new User();
-                            $ewelina->username = 'Borys';
-                            $ewelina->password = 'Ewelinka';
-                            $ewelina->first_name = 'Borys';
-                            $ewelina->last_name = 'Pies';
-                            $ewelina->create();
+                            // $ewelina = new User();
+                            // $ewelina->username = 'Bob';
+                            // $ewelina->password = '123';
+                            // $ewelina->first_name = 'Bob';
+                            // $ewelina->last_name = 'TheBuilder';
+                            // $ewelina->create();
 
                             // $user = User::find_user_by_id(9);
                             // $user->delete();
 
                             // $user = User::find_user_by_id(3);
-                            // $user->username = 'Grzywacz';
+                            // $user->username = 'Teodor';
                             // $user->update();
+
+                            $users = User::find_all();
+                            foreach ($users as $user) {
+                                echo $user->username;
+                            }
 
                             ?>
 
