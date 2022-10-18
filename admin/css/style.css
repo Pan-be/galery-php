@@ -3,6 +3,11 @@
 	border-radius: 5px;
 }
 
+.user_image {
+	width: 62px;
+	height: 62px;
+}
+
 /* sidebar */
 .photo-info-box {
 	border: 1px solid #e5e5e5;

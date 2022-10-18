@@ -1,4 +1,5 @@
 <?php include("includes/header.php"); ?>
+
 <?php if (!$session->is_signed_in()) {redirect('login.php');} ?>
 
 <?php 
@@ -29,7 +30,7 @@ $users = User::find_all();
             <small>Subheading</small>
         </h1>
      <div class="col-md-12">
-         <table class="table">
+         <table class="table table-hover">
              <thead>
                  <tr>
                      <th>Id</th>
@@ -45,7 +46,7 @@ $users = User::find_all();
                 foreach ($users as $user) : ?>
                 <tr>
                     <td><?php echo $user->id ?></td>
-                    <td><img class="admin-user-thumbnail" src="<?php echo $user->user_image; ?>" alt="">
+                    <td><img style="width: 100px; height: 100px; border-radius: 5px;" src="<?php echo $user->img_path_and_placehold(); ?>" alt="">
                     </td>
                     <td><?php echo $user->username ?>
                         <div class="action_links">
