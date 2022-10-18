@@ -55,10 +55,10 @@ if (empty($_GET['id'])) {
 
        <div class="form-group">
            <label for="caption">Caption</label>
-           <input type="text" name="caption" class="form-control" value="<?php echo $photo->caption ?>">
+           <input type="text" name="caption" class="form-control" value="<?php echo $photo->caption ?>"></div>
        <div class="form-group">
            <label for="caption">Alternate Text</label>
-           <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
+           <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>"></div>
        <div class="form-group">
            <label for="caption">Description</label>
            <textarea class="form-control" name="description" id="summernote" cols="30" rows="10"> <?php echo $photo->description; ?></textarea>
