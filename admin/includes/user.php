@@ -14,28 +14,9 @@ class User extends Db_object
     public $upload_directory = "image";
     public $image_placeholder = "https://place-hold.it/100x100&text=image";
 
-    public function set_file($file)
+    public function upload_photo()
     {
-        if(empty($file) || !$file || !is_array($file)) {
-            $this->errors[] = 'There was no file uploaded here.';
-            return false;
-        }elseif ($file['error'] != 0) {
-            $this->errors[] = $this->upload_errors_array[$file['error']];
-            return false;
-        }else {
-
-        $this->user_image = basename($file['name']);
-        $this->tmp_path = $file['tmp_name'];
-        $this->type = $file['type'];
-        $this->size = $file['size'];
-        }
-    }
-
-    public function save_user_and_img()
-    {
-        if($this->id) {
-            $this->update();
-        }else {
+     
             if (!empty($this->errors)) {
                 return false;
             }
@@ -52,10 +33,10 @@ class User extends Db_object
             }
 
             if (move_uploaded_file($this->tmp_path, $target_path)) {
-                if ($this->create()) {
+               
                     unset($this->tmp_path);
                     return true;
-                }
+            
             } else {
                 $this->errors[] = "The file directory probably does not have permission.";
                 return false;
@@ -63,7 +44,7 @@ class User extends Db_object
 
             $this->create();
         }
-    }
+    
 
     public function img_path_and_placehold()
     {
