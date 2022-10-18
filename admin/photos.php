@@ -29,7 +29,7 @@ $photos = Photo::find_all();
             <small>Subheading</small>
         </h1>
      <div class="col-md-12">
-         <table class="table">
+         <table class="table table-hover">
              <thead>
                  <tr>
                      <th>Photo</th>
@@ -44,11 +44,11 @@ $photos = Photo::find_all();
                 
                 foreach ($photos as $photo) : ?>
                 <tr>
-                    <td><img src="<?php echo $photo->picture_path(); ?>" alt="">
+                    <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>" alt="">
                     
                     <div class="pictures_link">
-                        <a href="delete_photo.php/?id=<?php echo $photo->id ?>">Delete</a>
-                        <a href="#">Edit</a>
+                        <a href="delete_photo.php?id=<?php echo $photo->id ?>">Delete</a>
+                        <a href="edit_photo.php?id=<?php echo $photo->id ?>">Edit</a>
                         <a href="#">View</a>
                     </div>
 

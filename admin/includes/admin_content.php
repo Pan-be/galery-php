@@ -28,8 +28,8 @@
 
                             // $user = User::find_by_id(10);
                             // echo $user->id;
-                            $user = Photo::find_by_id(1);
-                            echo $user->title;
+                            // $user = Photo::find_by_id(1);
+                            // echo $user->title;
 
                             // $user = User::find_user_by_id(3);
                             // $user->username = 'Teodor';
