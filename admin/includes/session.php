@@ -24,7 +24,7 @@ class Session
         }
     }
 
-    public function check_message(Type $var = null)
+    public function check_message()
     {
         if (isset($_SESSION['message'])) {
             $this->message = $_SESSION['message'];
@@ -77,3 +77,6 @@ class Session
 }
 
 $session = new Session();
+$message = $session->message();
+
+?>
