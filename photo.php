@@ -1,8 +1,9 @@
+
 <?php
 
 require_once("admin/includes/init.php");
-require_once("admin/includes/photo.php");
-require_once("admin/includes/comment.php");
+// require_once("admin/includes/photo.php");
+// require_once("admin/includes/comment.php");
 
 if (empty($_GET['id'])) {
     redirect('index.php');

@@ -40,7 +40,7 @@ class Paginate
 
     public function offset()
     {
-        return ($this->currrent_page-1)*$this->items_per_page;
+        return ($this->current_page - 1)*$this->items_per_page;
     }
 
 }
