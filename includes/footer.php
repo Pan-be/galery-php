@@ -5,7 +5,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Pan-Be 2022</p>
+                    <p class="text-center">Copyright &copy; Pan-Be 2022</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
