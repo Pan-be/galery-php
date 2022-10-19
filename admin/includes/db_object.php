@@ -162,4 +162,16 @@ class Db_object
         $database->query($base);
     }
 
+    public static function count_all()
+    {
+        global $database;
+
+        $base = "SELECT COUNT(*) FROM " . static::$db_table . " ";
+
+        $result_set = $database->query($base);
+        $row = mysqli_fetch_array($result_set);
+
+        return array_shift($row);
+    }
+
 }
