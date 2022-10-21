@@ -2,3 +2,10 @@
 	/* width: 200px !important; */
 	height: 150px !important;
 }
+
+/** home page pagination **/
+
+.pager .active a {
+	background-color: black;
+	color: white;
+}
