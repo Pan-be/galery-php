@@ -42,6 +42,8 @@ if (empty($_GET['id'])) {
 
 ?>
 
+<?php include('includes/photo_library_modal.php') ?>
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -64,7 +66,7 @@ if (empty($_GET['id'])) {
             <small>text</small>
         </h1>
         <div class="col-md-6">
-            <img class="img-responsive" src="<?php echo $user->img_path_and_placehold() ?>" alt="">
+            <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->img_path_and_placehold() ?>" alt=""></a>
         </div>
    <form action="" method="post" enctype="multipart/form-data"> 
      <div class="col-md-6">
