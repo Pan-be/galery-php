@@ -87,7 +87,7 @@ if (empty($_GET['id'])) {
            <input type="password" name="password" class="form-control" value="<?php echo $user->password ?>"></div>
 
        <div class="form-group">
-           <a class="btn btn-danger pull-left"href="delete_user.php?id=<?php echo $user->id ?>">Delete</a>
+           <a id="user-id"class="btn btn-danger pull-left"href="delete_user.php?id=<?php echo $user->id ?>">Delete</a>
            <input type="submit" name="update" value="Update" class="btn btn-primary pull-right"></div>
      </div>
 
