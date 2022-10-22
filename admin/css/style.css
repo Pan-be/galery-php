@@ -68,3 +68,9 @@
 #modal_sidebar {
 	position: fixed !important;
 }
+
+/***Login Page***/
+
+#log-in label {
+	color: white;
+}
