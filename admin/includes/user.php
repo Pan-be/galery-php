@@ -77,10 +77,9 @@ class User extends Db_object
 
         $this->user_image = $user_image;
         $this->id = $user_id;
-        $this->save();
 
         $base = "UPDATE " . self::$db_table . " SET user_image = '{$this->user_image}' ";
-        $base = "Where id = {$this->id} ";
+        $base .= " WHERE id = {$this->id} ";
         $update_image = $database->query($base);
 
         echo $this->img_path_and_placehold();

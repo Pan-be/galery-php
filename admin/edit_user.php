@@ -18,12 +18,14 @@ if (empty($_GET['id'])) {
 
             if (empty($_FILES['user_image'])) {
                 $user->save();
+                redirect("users.php");
             } else {
                 $user->set_file($_FILES['user_image']);
                 $user->upload_photo();
                 $user->save();
 
-                redirect("edit_user.php?id={$user->id}");
+                // redirect("edit_user.php?id={$user->id}");
+                redirect("users.php");
             }
 
 
@@ -65,7 +67,7 @@ if (empty($_GET['id'])) {
             users
             <small>text</small>
         </h1>
-        <div class="col-md-6">
+        <div class="col-md-6 user_image_box">
             <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->img_path_and_placehold() ?>" alt=""></a>
         </div>
    <form action="" method="post" enctype="multipart/form-data"> 
