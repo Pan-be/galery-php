@@ -1,5 +1,5 @@
 # gallery-php
-A small gallery project coded in OOP PHP [ and JS, Ajax(jQuery) and bootstrap css] with mySQL database<br><br>
+A CMS for gallery project coded in OOP PHP [ and JS, Ajax(jQuery) and bootstrap css] with mySQL database<br><br>
 
 - log in form,
 - admin panel,
