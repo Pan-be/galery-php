@@ -2,7 +2,9 @@
 // /Applications/XAMPP/xamppfiles/htdocs/galery
 
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
-define('SITE_ROOT', DS . 'Applications' . DS . 'XAMPP' . DS . 'xamppfiles' . DS . 'htdocs' . DS . 'galery');
+// define('SITE_ROOT', DS . 'Applications' . DS . 'XAMPP' . DS . 'xamppfiles' . DS . 'htdocs' . DS . 'galery');
+define('SITE_ROOT', $_SERVER['DOCUMENT_ROOT']);
+
 defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT . DS . 'admin' . DS . 'includes');
 
 
