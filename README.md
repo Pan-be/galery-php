@@ -7,4 +7,4 @@ A small gallery project coded in OOP PHP [ and JS, Ajax(jQuery) and bootstrap cs
 - add and edit user,<br><br>
 
 live demo:<br>
-- [Live](https://gallery-pan-be.000webhostapp.com/gallery/index.php) - to log in to admin panel contact me by [mail](konradbieniek@gmail.com)
+- [Live](https://gallery-pan-be.000webhostapp.com/gallery/index.php) - to log in to admin panel contact me by [mail](mailto:konradbieniek@gmail.com)
